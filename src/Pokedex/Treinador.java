@@ -1,4 +1,4 @@
-package pokedex;
+package Pokedex;
 
 // Criar ListaTreinadores
 // Cadastrar treinador em ListaTreinadores e criar uma lista vazia Lista(Treinador)
