@@ -22,7 +22,9 @@ public class Pokemons {
     private String Speed;//Velocidade do Pokemon
     private String Genetation;
     private String Legendary;//Pokemon Legado, Sim ou Não
-
+    
+    Reader classReader = new Reader();
+    Treinador classTreinador = new Treinador();
     
     public boolean buscarPorNome(ArrayList<Pokemons> Lista, String buscaNome){
         boolean encontrado = false;
@@ -50,7 +52,7 @@ public class Pokemons {
         }
     }
     
-    
+
     public boolean buscarPorTipo(ArrayList<Pokemons> Lista, String buscaTipo){
         boolean encontrado = false;
         int i=0;

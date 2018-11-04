@@ -1,8 +1,3 @@
-Bruno Alves,20
-João Marcelo 19,44
-Jorge,13
-ffwfqw,56
-gggg,67
-ttttt,67
-ian,56
-Rosario,52
+Bruno,20,Bulbasaur,Charmander,Squirtle,Kakuna,Pidgeot
+João,30,Metapod,Pidgeot,Raichu,Clefable,Zubat
+Marcos,40,Ivysaur,Clefairy,Primeape,Machop,Slowpoke
