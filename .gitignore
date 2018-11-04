@@ -4,3 +4,8 @@ Estruturando Projeto
 /bin/
 /src/Pokedex/nbproject/private/
 /src/Pokedex/build/
+/src/Pokedex/nbproject/
+/src/Pokedex/test/
+/src/Pokedex/build/
+/src/Pokedex/build.xml
+/src/Pokedex/manifest.mf
