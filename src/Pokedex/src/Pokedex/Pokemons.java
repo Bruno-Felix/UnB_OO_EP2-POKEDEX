@@ -1,8 +1,8 @@
 package Pokedex;
 
 // Ler ListaPokemonTodos e separar em Lista(Tipo)
-// Busca por Nome(ListaTodos)
-// Buscar por Tipo(Lista(Tipo))
+// Busca por Nome(ListaTodos) FEITO
+// Buscar por Tipo(Lista(Tipo)) FEITO
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -22,22 +22,8 @@ public class Pokemons {
     private String Speed;//Velocidade do Pokemon
     private String Genetation;
     private String Legendary;//Pokemon Legado, Sim ou Não
-    private String Experence;
-    private String Height;//Altura do Pokemon
-    private String Weight;//Peso do Pokemon
-    private String Abilitie_1;//Abilidade 1 do Pokemon
-    private String Abilitie_2;//Abilidade 2 do Pokemon
-    private String Abilitie_3;//Abilidade 3 do Pokemon
-    private String Move_1;
-    private String Move_2;
-    private String Move_3;
-    private String Move_4;
-    private String Move_5;
-    private String Move_6;
-    private String Move_7;
-   
-    public Pokemons(){}
 
+    
     public boolean buscarPorNome(ArrayList<Pokemons> Lista, String buscaNome){
         boolean encontrado = false;
         int i=0;
@@ -64,6 +50,7 @@ public class Pokemons {
         }
     }
     
+    
     public boolean buscarPorTipo(ArrayList<Pokemons> Lista, String buscaTipo){
         boolean encontrado = false;
         int i=0;
@@ -79,7 +66,7 @@ public class Pokemons {
         if(encontrado){
             for(int j=0; j<Lista.size(); j++){
                 if(Lista.get(j).getType1().compareToIgnoreCase(buscaTipo)==0){
-                    JOptionPane.showMessageDialog(null, "\n------------\nId: " + j + "\nNome:" + Lista.get(j).getName()
+                    System.out.println("\n------------\nId: " + j + "\nNome:" + Lista.get(j).getName()
                                                                     + "\nAtaque:" + Lista.get(j).getAttack()
                                                                     + "\nDefesa: " + Lista.get(j).getDefense());
                 }     
@@ -94,6 +81,7 @@ public class Pokemons {
         }
     }
 
+    
     public String getId() {
         return Id;
     }
@@ -197,108 +185,6 @@ public class Pokemons {
     public void setLegendary(String Legendary) {
         this.Legendary = Legendary;
     }
-
-    public String getExperence() {
-        return Experence;
-    }
-
-    public void setExperence(String Experence) {
-        this.Experence = Experence;
-    }
-
-    public String getHeight() {
-        return Height;
-    }
-
-    public void setHeight(String Height) {
-        this.Height = Height;
-    }
-
-    public String getWeight() {
-        return Weight;
-    }
-
-    public void setWeight(String Weight) {
-        this.Weight = Weight;
-    }
-
-    public String getAbilitie_1() {
-        return Abilitie_1;
-    }
-
-    public void setAbilitie_1(String Abilitie_1) {
-        this.Abilitie_1 = Abilitie_1;
-    }
-
-    public String getAbilitie_2() {
-        return Abilitie_2;
-    }
-
-    public void setAbilitie_2(String Abilitie_2) {
-        this.Abilitie_2 = Abilitie_2;
-    }
-
-    public String getAbilitie_3() {
-        return Abilitie_3;
-    }
-
-    public void setAbilitie_3(String Abilitie_3) {
-        this.Abilitie_3 = Abilitie_3;
-    }
-
-    public String getMove_1() {
-        return Move_1;
-    }
-
-    public void setMove_1(String Move_1) {
-        this.Move_1 = Move_1;
-    }
-
-    public String getMove_2() {
-        return Move_2;
-    }
-
-    public void setMove_2(String Move_2) {
-        this.Move_2 = Move_2;
-    }
-
-    public String getMove_3() {
-        return Move_3;
-    }
-
-    public void setMove_3(String Move_3) {
-        this.Move_3 = Move_3;
-    }
-
-    public String getMove_4() {
-        return Move_4;
-    }
-
-    public void setMove_4(String Move_4) {
-        this.Move_4 = Move_4;
-    }
-
-    public String getMove_5() {
-        return Move_5;
-    }
-
-    public void setMove_5(String Move_5) {
-        this.Move_5 = Move_5;
-    }
-
-    public String getMove_6() {
-        return Move_6;
-    }
-
-    public void setMove_6(String Move_6) {
-        this.Move_6 = Move_6;
-    }
-
-    public String getMove_7() {
-        return Move_7;
-    }
-
-    public void setMove_7(String Move_7) {
-        this.Move_7 = Move_7;
-    }
+    
+     public Pokemons(){}
 }

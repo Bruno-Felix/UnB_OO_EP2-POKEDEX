@@ -11,22 +11,21 @@ import java.util.ArrayList;
 
 public class Reader{
 
-	public ArrayList<Pokemons> LeituraArquivo(){
+	public ArrayList<Pokemons> LeituraArquivoCSV(){
             
             //ArrayList<Pokemons> ListaPokemonTodos = new ArrayList();
             
             String csvArquivo1 = "../../data/csv_files/POKEMONS_DATA_1.csv";            
-            BufferedReader conteudoCSV1 = null;
-            BufferedReader conteudoCSV2 = null;
+            BufferedReader conteudoCSV = null;
             String linha = "";
             String csvSeparadorCampo = ",";
             
             ArrayList<Pokemons> ListaPokemonTodos = new ArrayList<>();
             
             try{
-                conteudoCSV1 = new BufferedReader(new FileReader(csvArquivo1));
+                conteudoCSV = new BufferedReader(new FileReader(csvArquivo1));
       
-                while((linha = conteudoCSV1.readLine()) != null){
+                while((linha = conteudoCSV.readLine()) != null){
                     
                     String[] aux1 = linha.split(csvSeparadorCampo);
                    
