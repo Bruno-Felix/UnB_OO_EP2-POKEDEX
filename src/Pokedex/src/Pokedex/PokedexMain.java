@@ -11,9 +11,12 @@ public class Pokedex {
             Reader classReader = new Reader();
             Pokemons classPokemons = new Pokemons();
             Treinador classTreinador = new Treinador();
+            BuscarPokemon classBuscarPokemon = new BuscarPokemon();
+            CadastroTreinador classCadastroTreinador = new CadastroTreinador();
             
             //Método de Leitura e Criação da ListaListaPokemonTodos
             ArrayList<Pokemons> ListaPokemonTodos = classReader.LeituraArquivoCSV();
+            ArrayList<Treinador> auxListaTreinadores = classCadastroTreinador.LerArquivoTreinadores();
             
             //Método classPokemons.buscarPorNome Funcionalidade: Buscar Pokemon por Nome
             //Método classPokemons.buscarPorTipo Funcionalidade: Buscar Pokemon por Tipo
@@ -32,7 +35,7 @@ public class Pokedex {
 
                     do{
                         String buscaTipo = JOptionPane.showInputDialog("Insira Tipo:");
-                        auxBuscarPorTipo = classPokemons.buscarPorTipo(ListaPokemonTodos, buscaTipo);
+                        auxBuscarPorTipo = classBuscarPokemon.buscarPorTipo(ListaPokemonTodos, buscaTipo);
                     }while(auxBuscarPorTipo);
                 }
                 
@@ -43,7 +46,7 @@ public class Pokedex {
                     
                     do{
                         String buscaNome = JOptionPane.showInputDialog("Insira Nome:");
-                        auxBuscarPorNome = classPokemons.buscarPorNome(ListaPokemonTodos, buscaNome);
+                        auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, buscaNome);
                     }while(auxBuscarPorNome);
                 }
                 //Método classTreinador.buscarPorTipo Funcionalidade: Cadastrar Treinador
@@ -52,8 +55,7 @@ public class Pokedex {
                     aux = 1;
                     
                     //Método de Leitura e Criação da ListaTreinadores
-                    ArrayList<Treinador> auxListaTreinadores = classTreinador.LerArquivoTreinadores();
-                    ArrayList<Treinador> ListaTreinadores = classTreinador.cadastrarTreinador(auxListaTreinadores);
+                    ArrayList<Treinador> ListaTreinadores = classCadastroTreinador.cadastrarTreinador(auxListaTreinadores);
 
                     for(int i=0; i<ListaTreinadores.size(); i++){
 

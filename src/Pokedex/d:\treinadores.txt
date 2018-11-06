@@ -1,3 +1,4 @@
 Bruno,20,Bulbasaur,Charmander,Squirtle,Kakuna,Pidgeot
 João,30,Metapod,Pidgeot,Raichu,Clefable,Zubat
 Marcos,40,Ivysaur,Clefairy,Primeape,Machop,Slowpoke
+Rosario,49,Growlithe,Geodude,Doduo,Grimer,Rhydon
