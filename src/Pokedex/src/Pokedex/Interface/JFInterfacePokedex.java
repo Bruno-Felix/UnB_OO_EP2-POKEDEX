@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Pokedex;
+package Pokedex.Interface;
+
+import Pokedex.Interface.BuscarPorTipo;
 
 /**
  *
@@ -44,12 +46,12 @@ public class InterfacePokedex extends javax.swing.JFrame {
 
         jMenu1.setText("Pokemons");
         jMenu1.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-                jMenu1AncestorMoved(evt);
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                jMenu1AncestorMoved(evt);
             }
         });
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
