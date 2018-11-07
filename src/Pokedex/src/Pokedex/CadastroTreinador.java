@@ -13,7 +13,10 @@ import javax.swing.JOptionPane;
 
 public class CadastroTreinador extends Treinador{
     
+    BuscaPokemon classBuscarPokemon = new BuscaPokemon();
+    
     public ArrayList<Treinador> LerArquivoTreinadores() throws IOException{
+        
         
         String linha;
         BufferedReader conteudoTreinador;
@@ -69,43 +72,43 @@ public class CadastroTreinador extends Treinador{
         String inserirPokemon4 = null;
         String inserirPokemon5 = null;
 
-//        do{
-//           inserirPokemon1 = JOptionPane.showInputDialog("Insira Pokemon1:");
-//           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon1);
-//        }
-//        while(auxBuscarPorNome);
-//        
-//        do{
-//           inserirPokemon2 = JOptionPane.showInputDialog("Insira Pokemon2:");
-//           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon2);
-//        }
-//        while(auxBuscarPorNome);
-//        
-//        do{
-//           inserirPokemon3 = JOptionPane.showInputDialog("Insira Pokemon3:");
-//           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon3);
-//        }
-//        while(auxBuscarPorNome);
-//        
-//        do{
-//           inserirPokemon4 = JOptionPane.showInputDialog("Insira Pokemon4:");
-//           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon4);
-//        }
-//        while(auxBuscarPorNome);
-//        
-//        do{
-//           inserirPokemon5 = JOptionPane.showInputDialog("Insira Pokemon5:");
-//           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon5);
-//        }
-//        while(auxBuscarPorNome);
+        do{
+           inserirPokemon1 = JOptionPane.showInputDialog("Insira Pokemon1:");
+           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon1);
+        }
+        while(auxBuscarPorNome);
+        
+        do{
+           inserirPokemon2 = JOptionPane.showInputDialog("Insira Pokemon2:");
+           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon2);
+        }
+        while(auxBuscarPorNome);
+        
+        do{
+           inserirPokemon3 = JOptionPane.showInputDialog("Insira Pokemon3:");
+           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon3);
+        }
+        while(auxBuscarPorNome);
+        
+        do{
+           inserirPokemon4 = JOptionPane.showInputDialog("Insira Pokemon4:");
+           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon4);
+        }
+        while(auxBuscarPorNome);
+        
+        do{
+           inserirPokemon5 = JOptionPane.showInputDialog("Insira Pokemon5:");
+           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon5);
+        }
+        while(auxBuscarPorNome);
         
         treinador.setNome(inserirNome);
         treinador.setIdade(inserirIdade);
-        treinador.setPokemon1("null");
-        treinador.setPokemon2("null");
-        treinador.setPokemon3("null");
-        treinador.setPokemon4("null");
-        treinador.setPokemon5("null");
+        treinador.setPokemon1(inserirPokemon1);
+        treinador.setPokemon2(inserirPokemon2);
+        treinador.setPokemon3(inserirPokemon3);
+        treinador.setPokemon4(inserirPokemon4);
+        treinador.setPokemon5(inserirPokemon5);
         
         Lista.add(treinador);
         
@@ -118,11 +121,6 @@ public class CadastroTreinador extends Treinador{
             for(int i=0; i<Lista.size(); i++){
                 
                 gravarArq.printf(Lista.get(i).getNome() + "," + Lista.get(i).getIdade() + "," + Lista.get(i).getPokemon1() + "," + Lista.get(i).getPokemon2() + "," + Lista.get(i).getPokemon3() + "," + Lista.get(i).getPokemon4() + "," + Lista.get(i).getPokemon5() + "\n");
-                
-                System.out.println("Nome: " + Lista.get(i).getNome() +
-                                 "\nIdade: " + Lista.get(i).getIdade());
-                
-                System.out.printf("Gravada com sucesso em \"d:\\treinadores.txt\".\n\n");
             }
         }
         
@@ -142,8 +140,13 @@ public class CadastroTreinador extends Treinador{
         }
         
         if(encontrado){
-                    JOptionPane.showMessageDialog(null, "------------\nNome: " + Lista.get(i).getNome()
-                                                                  + "\nIdade: " + Lista.get(i).getIdade());
+                    JOptionPane.showMessageDialog(null, "----------- \nNome: " + Lista.get(i).getNome()
+                                                                  + "\nIdade: " + Lista.get(i).getIdade()
+                                                                  + "\nPokemon 1:" + Lista.get(i).getPokemon1()
+                                                                  + "\nPokemon 1:" + Lista.get(i).getPokemon2()
+                                                                  + "\nPokemon 1:" + Lista.get(i).getPokemon3()
+                                                                  + "\nPokemon 1:" + Lista.get(i).getPokemon4()
+                                                                  + "\nPokemon 1:" + Lista.get(i).getPokemon5());
             
             return false;
         }
@@ -152,22 +155,6 @@ public class CadastroTreinador extends Treinador{
             
             return true;
         }
-    }
-
-    public ArrayList<Treinador> cadastrarPokemonsTreinador(ArrayList<Treinador> Lista) throws IOException{
-        
-        Reader classReader = new Reader();
-        BuscaPokemon classBuscarPokemon = new BuscaPokemon();
-        
-        //Método de Leitura e Criação da ListaListaPokemonTodos
-        ArrayList<Pokemons> ListaPokemonTodos = classReader.LeituraArquivoCSV();         
-
-        Treinador classTreinador = new Treinador();
-        
-       
-        
-        //Treinador treinador = new Treinador();
-        return Lista;
     }
 }
 

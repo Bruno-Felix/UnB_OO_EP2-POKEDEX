@@ -48,7 +48,7 @@ public class BuscaPokemon extends Pokemons{
         if(encontrado){
             for(int j=0; j<Lista.size(); j++){
                 if(Lista.get(j).getType1().compareToIgnoreCase(buscaTipo)==0){
-                    System.out.println("\n------------\nId: " + j + "\nNome:" + Lista.get(j).getName()
+                    JOptionPane.showMessageDialog(null, "\n------------\nId: " + j + "\nNome:" + Lista.get(j).getName()
                                                                     + "\nAtaque:" + Lista.get(j).getAttack()
                                                                     + "\nDefesa: " + Lista.get(j).getDefense());
                 }     

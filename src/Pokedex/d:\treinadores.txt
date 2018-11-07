@@ -1,6 +1,1 @@
-Bruno,20,Bulbasaur,Charmander,Squirtle,Kakuna,Pidgeot
-João,30,Metapod,Pidgeot,Raichu,Clefable,Zubat
-Marcos,40,Ivysaur,Clefairy,Primeape,Machop,Slowpoke
-Rosario,49,Growlithe,Geodude,Doduo,Grimer,Rhydon
-Augusto,30,null,null,null,null,null
-Bendita,59,null,null,null,null,null
+Bruno,20,Blastoise,Beedrill,Pidgeot,Sandshrew,Jigglypuff
