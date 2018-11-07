@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Pokedex;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author bruno
- */
-public class BuscarPokemon extends Pokemons{
+
+public class BuscaPokemon extends Pokemons{
     
     public boolean buscarPorNome(ArrayList<Pokemons> Lista, String buscaNome){
         boolean encontrado = false;

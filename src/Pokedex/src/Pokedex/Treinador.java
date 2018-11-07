@@ -6,15 +6,6 @@ package Pokedex;
 // Inserir Pokemons ao treinador selecionado(Lista(Treinador))
 // Visualizar pokemons de Treinador(Lista(Treinador)
 
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.io.FileWriter;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import javax.swing.JOptionPane;
 
 public class Treinador {
     

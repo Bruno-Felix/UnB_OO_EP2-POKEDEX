@@ -6,31 +6,32 @@ import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class Pokedex {
+
+public class PokedexMain {
 	public static void main(String[] args) throws IOException{
             Reader classReader = new Reader();
-            Pokemons classPokemons = new Pokemons();
-            Treinador classTreinador = new Treinador();
-            BuscarPokemon classBuscarPokemon = new BuscarPokemon();
+            BuscaPokemon classBuscarPokemon = new BuscaPokemon();
             CadastroTreinador classCadastroTreinador = new CadastroTreinador();
             
             //Método de Leitura e Criação da ListaListaPokemonTodos
             ArrayList<Pokemons> ListaPokemonTodos = classReader.LeituraArquivoCSV();
-            ArrayList<Treinador> auxListaTreinadores = classCadastroTreinador.LerArquivoTreinadores();
+            ArrayList<Treinador> ListaTreinadores = new ArrayList<>();
+            ListaTreinadores = classCadastroTreinador.LerArquivoTreinadores();
             
-            //Método classPokemons.buscarPorNome Funcionalidade: Buscar Pokemon por Nome
-            //Método classPokemons.buscarPorTipo Funcionalidade: Buscar Pokemon por Tipo
-                boolean auxBuscarPorNome;
-                boolean auxBuscarPorTipo;
-            
+            //Menu de Opções
             int aux = 0;
-            String escolha = JOptionPane.showInputDialog("[1] Buscar por Nome;\n[2] Buscar por Tipo;\n[3] Cadastrar Treinador.\n\n   Escolha: ");
+            String escolha = JOptionPane.showInputDialog("[1] Buscar por Nome;\n"
+                                                       + "[2] Buscar por Tipo;\n"
+                                                       + "[3] Cadastrar Treinador;"
+                                                       + "[4] Atribuir Pokémons ao Treinador.\n\n   "
+                                                       + "Escolha: ");
             
-            while((aux == 0 && "2".compareToIgnoreCase(escolha)==0) || (aux == 0 && "1".compareToIgnoreCase(escolha)==0) || (aux == 0 && "3".compareToIgnoreCase(escolha)==0)){
+            while((aux == 0 && "2".compareToIgnoreCase(escolha)==0) || (aux == 0 && "1".compareToIgnoreCase(escolha)==0) || (aux == 0 && "3".compareToIgnoreCase(escolha)==0) || (aux == 0 && "4".compareToIgnoreCase(escolha)==0)){
             
                 //Método classPokemons.buscarPorNome Funcionalidade: Buscar Pokemon por Nome
                 if("2".compareToIgnoreCase(escolha)==0 ){
                     
+                    boolean auxBuscarPorTipo;
                     aux = 1;
 
                     do{
@@ -41,7 +42,7 @@ public class Pokedex {
                 
                 //Método classPokemons.buscarPorTipo Funcionalidade: Buscar Pokemon por Tipo
                 else if("1".compareToIgnoreCase(escolha)==0){
-
+                    boolean auxBuscarPorNome;
                     aux = 1;    
                     
                     do{
@@ -55,7 +56,7 @@ public class Pokedex {
                     aux = 1;
                     
                     //Método de Leitura e Criação da ListaTreinadores
-                    ArrayList<Treinador> ListaTreinadores = classCadastroTreinador.cadastrarTreinador(auxListaTreinadores);
+                    ListaTreinadores = classCadastroTreinador.cadastrarTreinador(ListaTreinadores);
 
                     for(int i=0; i<ListaTreinadores.size(); i++){
 
@@ -67,6 +68,16 @@ public class Pokedex {
                                            "\nPokemon 1: " + ListaTreinadores.get(i).getPokemon4() +
                                            "\nPokemon 1: " + ListaTreinadores.get(i).getPokemon5());
                     }
+                }
+                
+                else if("4".compareToIgnoreCase(escolha)==0){
+                    
+                    boolean auxbuscarNomeTreinador;
+                    
+                    do{
+                        String buscarNomeTreinador = JOptionPane.showInputDialog("Insira Nome:");
+                        auxbuscarNomeTreinador = classCadastroTreinador.buscarTreinadorPorNome(ListaTreinadores, buscarNomeTreinador);
+                    }while(auxbuscarNomeTreinador);
                 }
             }
         }

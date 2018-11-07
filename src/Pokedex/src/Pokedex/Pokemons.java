@@ -4,8 +4,6 @@ package Pokedex;
 // Busca por Nome(ListaTodos) FEITO
 // Buscar por Tipo(Lista(Tipo)) FEITO
 
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 public class Pokemons {
     

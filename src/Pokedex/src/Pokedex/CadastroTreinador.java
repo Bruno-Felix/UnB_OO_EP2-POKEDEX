@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Pokedex;
 
 import java.io.BufferedReader;
@@ -15,10 +10,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author bruno
- */
+
 public class CadastroTreinador extends Treinador{
     
     public ArrayList<Treinador> LerArquivoTreinadores() throws IOException{
@@ -55,7 +47,7 @@ public class CadastroTreinador extends Treinador{
     public ArrayList<Treinador> cadastrarTreinador(ArrayList<Treinador> Lista) throws IOException{
         
         Reader classReader = new Reader();
-        BuscarPokemon classBuscarPokemon = new BuscarPokemon();
+        //BuscaPokemon classBuscarPokemon = new BuscaPokemon();
         
         //Método de Leitura e Criação da ListaListaPokemonTodos
         ArrayList<Pokemons> ListaPokemonTodos = classReader.LeituraArquivoCSV();
@@ -77,43 +69,43 @@ public class CadastroTreinador extends Treinador{
         String inserirPokemon4 = null;
         String inserirPokemon5 = null;
 
-        do{
-           inserirPokemon1 = JOptionPane.showInputDialog("Insira Pokemon1:");
-           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon1);
-        }
-        while(auxBuscarPorNome);
-        
-        do{
-           inserirPokemon2 = JOptionPane.showInputDialog("Insira Pokemon2:");
-           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon2);
-        }
-        while(auxBuscarPorNome);
-        
-        do{
-           inserirPokemon3 = JOptionPane.showInputDialog("Insira Pokemon3:");
-           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon3);
-        }
-        while(auxBuscarPorNome);
-        
-        do{
-           inserirPokemon4 = JOptionPane.showInputDialog("Insira Pokemon4:");
-           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon4);
-        }
-        while(auxBuscarPorNome);
-        
-        do{
-           inserirPokemon5 = JOptionPane.showInputDialog("Insira Pokemon5:");
-           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon5);
-        }
-        while(auxBuscarPorNome);
+//        do{
+//           inserirPokemon1 = JOptionPane.showInputDialog("Insira Pokemon1:");
+//           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon1);
+//        }
+//        while(auxBuscarPorNome);
+//        
+//        do{
+//           inserirPokemon2 = JOptionPane.showInputDialog("Insira Pokemon2:");
+//           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon2);
+//        }
+//        while(auxBuscarPorNome);
+//        
+//        do{
+//           inserirPokemon3 = JOptionPane.showInputDialog("Insira Pokemon3:");
+//           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon3);
+//        }
+//        while(auxBuscarPorNome);
+//        
+//        do{
+//           inserirPokemon4 = JOptionPane.showInputDialog("Insira Pokemon4:");
+//           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon4);
+//        }
+//        while(auxBuscarPorNome);
+//        
+//        do{
+//           inserirPokemon5 = JOptionPane.showInputDialog("Insira Pokemon5:");
+//           auxBuscarPorNome = classBuscarPokemon.buscarPorNome(ListaPokemonTodos, inserirPokemon5);
+//        }
+//        while(auxBuscarPorNome);
         
         treinador.setNome(inserirNome);
         treinador.setIdade(inserirIdade);
-        treinador.setPokemon1(inserirPokemon1);
-        treinador.setPokemon2(inserirPokemon2);
-        treinador.setPokemon3(inserirPokemon3);
-        treinador.setPokemon4(inserirPokemon4);
-        treinador.setPokemon5(inserirPokemon5);
+        treinador.setPokemon1("null");
+        treinador.setPokemon2("null");
+        treinador.setPokemon3("null");
+        treinador.setPokemon4("null");
+        treinador.setPokemon5("null");
         
         Lista.add(treinador);
         
@@ -136,5 +128,46 @@ public class CadastroTreinador extends Treinador{
         
         return Lista;
     }
-    
+
+    public boolean buscarTreinadorPorNome(ArrayList<Treinador> Lista, String buscarNomeTreinador){
+        boolean encontrado = false;
+        int i=0;
+        while(encontrado == false && i<Lista.size()){
+            if(Lista.get(i).getNome().compareToIgnoreCase(buscarNomeTreinador)==0){
+                encontrado = true;
+            }
+            else{
+                i++;
+            }
+        }
+        
+        if(encontrado){
+                    JOptionPane.showMessageDialog(null, "------------\nNome: " + Lista.get(i).getNome()
+                                                                  + "\nIdade: " + Lista.get(i).getIdade());
+            
+            return false;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Nome não encontrado, por favor Buscar Novamente!");
+            
+            return true;
+        }
+    }
+
+    public ArrayList<Treinador> cadastrarPokemonsTreinador(ArrayList<Treinador> Lista) throws IOException{
+        
+        Reader classReader = new Reader();
+        BuscaPokemon classBuscarPokemon = new BuscaPokemon();
+        
+        //Método de Leitura e Criação da ListaListaPokemonTodos
+        ArrayList<Pokemons> ListaPokemonTodos = classReader.LeituraArquivoCSV();         
+
+        Treinador classTreinador = new Treinador();
+        
+       
+        
+        //Treinador treinador = new Treinador();
+        return Lista;
+    }
 }
+
