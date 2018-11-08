@@ -19,20 +19,38 @@ public class JFInterfacePokedex extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jdpprincipal = new javax.swing.JDesktopPane();
+        popupMenu1 = new java.awt.PopupMenu();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        CadastrarTreinador = new javax.swing.JMenuItem();
+        BuscarTreinador = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         BuscaPorNome = new javax.swing.JMenuItem();
         BuscaPorTipo = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+
+        popupMenu1.setLabel("popupMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-        getContentPane().add(jdpprincipal);
-        jdpprincipal.setBounds(40, 40, 540, 310);
+
+        jMenu2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jMenu2.setText("Treinadores");
+
+        CadastrarTreinador.setText("Cadastrar Treinador");
+        CadastrarTreinador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastrarTreinadorActionPerformed(evt);
+            }
+        });
+        jMenu2.add(CadastrarTreinador);
+
+        BuscarTreinador.setText("Buscar Treinador");
+        BuscarTreinador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarTreinadorActionPerformed(evt);
+            }
+        });
+        jMenu2.add(BuscarTreinador);
 
         jMenu1.setText("Pokemons");
         jMenu1.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -66,24 +84,7 @@ public class JFInterfacePokedex extends javax.swing.JFrame {
         });
         jMenu1.add(BuscaPorTipo);
 
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jMenu2.setText("Treinadores");
-
-        jMenuItem3.setText("Cadastrar Treinador");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem3);
-
-        jMenuItem4.setText("Inserir Pokemons a um Treinador");
-        jMenu2.add(jMenuItem4);
-
-        jMenuItem5.setText("Visualizar Treinador");
-        jMenu2.add(jMenuItem5);
+        jMenu2.add(jMenu1);
 
         jMenuBar1.add(jMenu2);
 
@@ -102,9 +103,13 @@ public class JFInterfacePokedex extends javax.swing.JFrame {
         
     }//GEN-LAST:event_BuscaPorTipoActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void CadastrarTreinadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarTreinadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+        
+        JFCadastrarTreinador obj = new JFCadastrarTreinador();
+        jdpprincipal.add(obj);
+        obj.setVisible(true);
+    }//GEN-LAST:event_CadastrarTreinadorActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
         // TODO add your handling code here:
@@ -121,6 +126,14 @@ public class JFInterfacePokedex extends javax.swing.JFrame {
         jdpprincipal.add(obj);
         obj.setVisible(true);
     }//GEN-LAST:event_BuscaPorNomeActionPerformed
+
+    private void BuscarTreinadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarTreinadorActionPerformed
+        // TODO add your handling code here:
+        
+        JFBuscarTreinador obj = new JFBuscarTreinador();
+        jdpprincipal.add(obj);
+        obj.setVisible(true);
+    }//GEN-LAST:event_BuscarTreinadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,12 +173,11 @@ public class JFInterfacePokedex extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem BuscaPorNome;
     private javax.swing.JMenuItem BuscaPorTipo;
+    private javax.swing.JMenuItem BuscarTreinador;
+    private javax.swing.JMenuItem CadastrarTreinador;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JDesktopPane jdpprincipal;
+    private java.awt.PopupMenu popupMenu1;
     // End of variables declaration//GEN-END:variables
 }

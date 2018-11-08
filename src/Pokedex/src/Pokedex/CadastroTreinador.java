@@ -2,12 +2,15 @@ package Pokedex;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -15,7 +18,7 @@ public class CadastroTreinador extends Treinador{
     
     BuscaPokemon classBuscarPokemon = new BuscaPokemon();
     
-    public ArrayList<Treinador> LerArquivoTreinadores() throws IOException{
+    public ArrayList<Treinador> LerArquivoTreinadores(){
         
         
         String linha;
@@ -25,29 +28,33 @@ public class CadastroTreinador extends Treinador{
         
         ArrayList<Treinador> ListaTreinadores = new ArrayList<>();
         
-        conteudoTreinador = new BufferedReader(new FileReader(treinadorArquivo));
-              
-        while((linha = conteudoTreinador.readLine()) != null){
+        try {
+            conteudoTreinador = new BufferedReader(new FileReader(treinadorArquivo));
             
-            String[] aux2 = linha.split(csvSeparadorCampo);
-             
-            Treinador treinador = new Treinador();
-            
-            treinador.setNome(aux2[0]);
-            treinador.setIdade(aux2[1]);
-            treinador.setPokemon1(aux2[2]);
-            treinador.setPokemon2(aux2[3]);
-            treinador.setPokemon3(aux2[4]);
-            treinador.setPokemon4(aux2[5]);
-            treinador.setPokemon5(aux2[6]);
-            
-            ListaTreinadores.add(treinador);
-         }
+            while((linha = conteudoTreinador.readLine()) != null){
+                
+                String[] aux2 = linha.split(csvSeparadorCampo);
+                
+                Treinador treinador = new Treinador();
+                
+                treinador.setNome(aux2[0]);
+                treinador.setIdade(aux2[1]);
+                treinador.setPokemon1(aux2[2]);
+                treinador.setPokemon2(aux2[3]);
+                treinador.setPokemon3(aux2[4]);
+                treinador.setPokemon4(aux2[5]);
+                treinador.setPokemon5(aux2[6]);
+                
+                ListaTreinadores.add(treinador);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(CadastroTreinador.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         return ListaTreinadores;
     }
     
-    public ArrayList<Treinador> cadastrarTreinador(ArrayList<Treinador> Lista) throws IOException{
+    public ArrayList<Treinador> cadastrarTreinador(ArrayList<Treinador> Lista){
         
         Reader classReader = new Reader();
         //BuscaPokemon classBuscarPokemon = new BuscaPokemon();
@@ -113,7 +120,10 @@ public class CadastroTreinador extends Treinador{
         Lista.add(treinador);
         
         
-        try (BufferedWriter buffWrite = new BufferedWriter(new FileWriter("d:\\treinadores.txt"))) {
+        try{
+            
+            BufferedWriter buffWrite = new BufferedWriter(new FileWriter("d:\\treinadores.txt"));
+            
             PrintWriter gravarArq = new PrintWriter(buffWrite);
             
             Scanner in = new Scanner(System.in);
@@ -122,6 +132,8 @@ public class CadastroTreinador extends Treinador{
                 
                 gravarArq.printf(Lista.get(i).getNome() + "," + Lista.get(i).getIdade() + "," + Lista.get(i).getPokemon1() + "," + Lista.get(i).getPokemon2() + "," + Lista.get(i).getPokemon3() + "," + Lista.get(i).getPokemon4() + "," + Lista.get(i).getPokemon5() + "\n");
             }
+        } catch (IOException ex) {
+            Logger.getLogger(CadastroTreinador.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return Lista;
