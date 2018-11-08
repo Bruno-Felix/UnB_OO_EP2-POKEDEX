@@ -20,6 +20,13 @@ public class JFInterfacePokedex extends javax.swing.JFrame {
     private void initComponents() {
 
         popupMenu1 = new java.awt.PopupMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jdpprincipal = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         CadastrarTreinador = new javax.swing.JMenuItem();
@@ -30,8 +37,22 @@ public class JFInterfacePokedex extends javax.swing.JFrame {
 
         popupMenu1.setLabel("popupMenu1");
 
+        jMenu3.setText("jMenu3");
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenuItem2.setText("jMenuItem2");
+
+        jMenu4.setText("jMenu4");
+
+        jMenu5.setText("jMenu5");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new java.awt.CardLayout());
+
+        jdpprincipal.add(jPanel2);
+
+        getContentPane().add(jdpprincipal, "card2");
 
         jMenu2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jMenu2.setText("Treinadores");
@@ -52,14 +73,16 @@ public class JFInterfacePokedex extends javax.swing.JFrame {
         });
         jMenu2.add(BuscarTreinador);
 
+        jMenuBar1.add(jMenu2);
+
         jMenu1.setText("Pokemons");
         jMenu1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                jMenu1AncestorMoved(evt);
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-                jMenu1AncestorMoved(evt);
             }
         });
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
@@ -84,13 +107,11 @@ public class JFInterfacePokedex extends javax.swing.JFrame {
         });
         jMenu1.add(BuscaPorTipo);
 
-        jMenu2.add(jMenu1);
-
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(621, 437));
+        setSize(new java.awt.Dimension(433, 311));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -177,7 +198,14 @@ public class JFInterfacePokedex extends javax.swing.JFrame {
     private javax.swing.JMenuItem CadastrarTreinador;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jdpprincipal;
     private java.awt.PopupMenu popupMenu1;
     // End of variables declaration//GEN-END:variables
 }

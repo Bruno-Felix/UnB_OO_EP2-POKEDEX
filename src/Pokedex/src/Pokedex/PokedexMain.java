@@ -23,6 +23,7 @@ public class PokedexMain {
             String escolha = JOptionPane.showInputDialog("[1] Buscar por Nome;\n"
                                                        + "[2] Buscar por Tipo;\n"
                                                        + "[3] Cadastrar Treinador;\n"
+                                                       + "[4] Buscar Treinador.\n"
                                                        );
             
             while((aux == 0 && "2".compareToIgnoreCase(escolha)==0) || (aux == 0 && "1".compareToIgnoreCase(escolha)==0) || (aux == 0 && "3".compareToIgnoreCase(escolha)==0) || (aux == 0 && "4".compareToIgnoreCase(escolha)==0)){

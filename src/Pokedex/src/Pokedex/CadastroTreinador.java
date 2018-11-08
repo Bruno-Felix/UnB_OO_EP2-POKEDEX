@@ -9,8 +9,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -47,9 +45,9 @@ public class CadastroTreinador extends Treinador{
                 
                 ListaTreinadores.add(treinador);
             }
-        } catch (IOException ex) {
-            Logger.getLogger(CadastroTreinador.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch(IOException e){
+                System.out.println("IO Erro: \n"+e.getMessage());
+            }
         
         return ListaTreinadores;
     }
@@ -121,7 +119,10 @@ public class CadastroTreinador extends Treinador{
         
         
         try{
-            
+            System.out.println("Tentou!\n");
+            System.out.println(Lista.size());
+            for(int i=0; i<Lista.size(); i++){
+            System.out.println("\nNome: " + Lista.get(i).getNome());}
             BufferedWriter buffWrite = new BufferedWriter(new FileWriter("d:\\treinadores.txt"));
             
             PrintWriter gravarArq = new PrintWriter(buffWrite);
@@ -131,10 +132,14 @@ public class CadastroTreinador extends Treinador{
             for(int i=0; i<Lista.size(); i++){
                 
                 gravarArq.printf(Lista.get(i).getNome() + "," + Lista.get(i).getIdade() + "," + Lista.get(i).getPokemon1() + "," + Lista.get(i).getPokemon2() + "," + Lista.get(i).getPokemon3() + "," + Lista.get(i).getPokemon4() + "," + Lista.get(i).getPokemon5() + "\n");
+            System.out.println("Salvou!\n");
             }
-        } catch (IOException ex) {
-            Logger.getLogger(CadastroTreinador.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException e){
+                System.out.println("IO Erro: \n"+e.getMessage());
         }
+        
+        for(int i=0; i<Lista.size(); i++){
+            System.out.println("\nNome: " + Lista.get(i).getNome());}
         
         return Lista;
     }
