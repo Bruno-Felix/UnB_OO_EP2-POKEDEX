@@ -1,4 +1,4 @@
-package Pokedex.Interface;
+package Interface;
 
 import Pokedex.BuscaPokemon;
 import Pokedex.CadastroTreinador;
@@ -7,7 +7,7 @@ import Pokedex.Reader;
 import java.util.ArrayList;
 
 
-public class BuscarporNome extends javax.swing.JInternalFrame {
+public class JFBuscarporNome extends javax.swing.JInternalFrame {
     
     Reader classReader = new Reader();
     BuscaPokemon classBuscarPokemon = new BuscaPokemon();
@@ -20,7 +20,7 @@ public class BuscarporNome extends javax.swing.JInternalFrame {
     /**
      * Creates new form BuscarporNome
      */
-    public BuscarporNome() {
+    public JFBuscarporNome() {
         initComponents();
     }
 

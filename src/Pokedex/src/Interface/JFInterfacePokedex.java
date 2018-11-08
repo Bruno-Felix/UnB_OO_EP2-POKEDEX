@@ -1,22 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Pokedex.Interface;
+package Interface;
 
-import Pokedex.Interface.BuscarPorTipo;
 
-/**
- *
- * @author bruno
- */
-public class InterfacePokedex extends javax.swing.JFrame {
+public class JFInterfacePokedex extends javax.swing.JFrame {
 
     /**
      * Creates new form InterfacePokedex
      */
-    public InterfacePokedex() {
+    public JFInterfacePokedex() {
         initComponents();
     }
 
@@ -106,7 +96,7 @@ public class InterfacePokedex extends javax.swing.JFrame {
     private void BuscaPorTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscaPorTipoActionPerformed
         // TODO add your handling code here:
         
-        BuscarPorTipo obj= new BuscarPorTipo();
+        JFBuscarPorTipo obj= new JFBuscarPorTipo();
         jdpprincipal.add(obj);
         obj.setVisible(true);
         
@@ -127,7 +117,7 @@ public class InterfacePokedex extends javax.swing.JFrame {
     private void BuscaPorNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscaPorNomeActionPerformed
         // TODO add your handling code here:
         
-        BuscarporNome obj = new BuscarporNome();
+        JFBuscarporNome obj = new JFBuscarporNome();
         jdpprincipal.add(obj);
         obj.setVisible(true);
     }//GEN-LAST:event_BuscaPorNomeActionPerformed
@@ -149,20 +139,20 @@ public class InterfacePokedex extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfacePokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFInterfacePokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfacePokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFInterfacePokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfacePokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFInterfacePokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfacePokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFInterfacePokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfacePokedex().setVisible(true);
+                new JFInterfacePokedex().setVisible(true);
             }
         });
     }

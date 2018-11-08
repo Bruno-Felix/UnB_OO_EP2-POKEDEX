@@ -1,4 +1,4 @@
-package Pokedex.Interface;
+package Interface;
 
 import Pokedex.BuscaPokemon;
 import Pokedex.CadastroTreinador;
@@ -6,7 +6,7 @@ import Pokedex.Pokemons;
 import Pokedex.Reader;
 import java.util.ArrayList;
 
-public class BuscarPorTipo extends javax.swing.JInternalFrame {
+public class JFBuscarPorTipo extends javax.swing.JInternalFrame {
 
     Reader classReader = new Reader();
     BuscaPokemon classBuscarPokemon = new BuscaPokemon();
@@ -16,7 +16,7 @@ public class BuscarPorTipo extends javax.swing.JInternalFrame {
     
     String Tipo;
     
-    public BuscarPorTipo() {
+    public JFBuscarPorTipo() {
         initComponents();
     }
 
